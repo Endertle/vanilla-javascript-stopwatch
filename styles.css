@@ -78,3 +78,9 @@ body {
 .btn-reset:hover {
   background: #b9bb59;
 }
+
+@media (min-width: 900px) {
+  .container {
+    width: 70%;
+  }
+}
