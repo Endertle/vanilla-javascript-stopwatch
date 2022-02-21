@@ -58,10 +58,20 @@ function stopTimer(event) {
 
 startBtn.addEventListener("click", function (event) {
   startTimer(event);
+  //Disabled
+  startBtn.disabled = true;
+  startBtn.style.opacity = 0.3;
+  stopBtn.disabled = false;
+  stopBtn.style.opacity = 1;
 });
 stopBtn.addEventListener("click", function (event) {
   stopTimer(event);
+  // Disabled
+  startBtn.disabled = false;
+  startBtn.style.opacity = 1;
+  stopBtn.disabled = true;
+  stopBtn.style.opacity = 0.3;
 });
 resetBtn.addEventListener("click", function (event) {
-  resetBtnTimer(event);
+  resetTimer(event);
 });
