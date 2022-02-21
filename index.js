@@ -1,9 +1,7 @@
-"use strict";
-
 const timer = document.getElementById("timer");
-const startBttn = document.getElementById("start");
-const stopBttn = document.getElementById("stop");
-const resetBttn = document.getElementById("reset");
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+const resetBtn = document.getElementById("reset");
 
 let hours = "00";
 let minutes = "00";
@@ -11,10 +9,10 @@ let seconds = "00";
 
 let currentTime = ``;
 let start = false;
-let runAgainAt = Date.now();
+let runAgain = Date.now();
 function startTimer(event) {
   if (!start) {
-    if (Date.now() > runAgainAt) {
+    if (Date.now() > runAgain) {
       timer.innerText = `${hours}:${minutes}:${seconds}`;
       seconds++;
       if (parseInt(seconds) < 10) {
@@ -36,7 +34,7 @@ function startTimer(event) {
         }
       }
 
-      runAgainAt = Date.now() + 900;
+      runAgain = Date.now() + 900;
     }
   }
   requestAnimationFrame(startTimer);
@@ -58,12 +56,12 @@ function stopTimer(event) {
   start = true;
 }
 
-startBttn.addEventListener("click", function (event) {
+startBtn.addEventListener("click", function (event) {
   startTimer(event);
 });
-stopBttn.addEventListener("click", function (event) {
+stopBtn.addEventListener("click", function (event) {
   stopTimer(event);
 });
-resetBttn.addEventListener("click", function (event) {
-  resetTimer(event);
+resetBtn.addEventListener("click", function (event) {
+  resetBtnTimer(event);
 });
